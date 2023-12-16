@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - cd src/layers/common_layer/nodejs/node_modules/common_layer/
+      - npm install
+      - npm prune --production
+      - rm -rf package-lock.json
+      - cd ../../../../../../
+
+  build:
+    commands:
+      - sam build -p -c
+
+  post_build:
+    commands:
+      - sam deploy --config-env dev --no-confirm-changeset --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
