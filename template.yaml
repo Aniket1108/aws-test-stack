@@ -71,7 +71,7 @@ Resources:
         - nodejs18.x
       RetentionPolicy: Delete 
 
-  node14layer:
+  nodefourteenlayer:
     Type: AWS::Serverless::LayerVersion
     Properties:
       LayerName: common_layer
@@ -94,15 +94,15 @@ Resources:
             Path: /testFunction
             Method: GET
 
-  node14funtion:
+  nodefourteenfuntion:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: src/handlers/node14function/
       Role: !GetAtt lambdaExecutionRole.Arn 
       Runtime: nodejs14.x   
       Events:
-        testFunction:
+        nodefourteen:
           Type: Api
           Properties:
-            Path: /testFunction
+            Path: /nodefourteenfuntion
             Method: GET
