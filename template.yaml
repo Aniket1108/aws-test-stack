@@ -94,7 +94,7 @@ Resources:
             Path: /testFunction
             Method: GET
 
-  nodefourteenfuntion:
+  nodefourteenfuntions:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: src/handlers/node14function/
