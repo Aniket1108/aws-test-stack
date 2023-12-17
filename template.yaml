@@ -70,6 +70,16 @@ Resources:
       CompatibleRuntimes:
         - nodejs18.x
       RetentionPolicy: Delete 
+
+  node14layer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: common_layer
+      Description: Common layer for all functions
+      ContentUri: src/layers/node14layer
+      CompatibleRuntimes:
+        - nodejs14.x
+      RetentionPolicy: Delete 
 # layers ==================================================================================================================================
 
   testFunction:
@@ -77,6 +87,19 @@ Resources:
     Properties:
       CodeUri: src/handlers/testFunction/
       Role: !GetAtt lambdaExecutionRole.Arn    
+      Events:
+        testFunction:
+          Type: Api
+          Properties:
+            Path: /testFunction
+            Method: GET
+
+  node14funtion:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/handlers/node14function/
+      Role: !GetAtt lambdaExecutionRole.Arn 
+      Runtime: nodejs14.x   
       Events:
         testFunction:
           Type: Api

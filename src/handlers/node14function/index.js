@@ -1,4 +1,4 @@
-import { pdflib, memoryStreams } from 'node14layer/services/packageExport.js';
+import { pdflib, memoryStreams } from 'common_layer/services/packageExport.js';
 
 const lambdaHandler = async () => {
   const merge = async (buffers) => {
