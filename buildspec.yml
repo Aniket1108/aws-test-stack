@@ -3,6 +3,8 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - ldd --version
+
       - cd src/layers/common_layer/nodejs/node_modules/common_layer/
       - npm install
       - npm prune --production
