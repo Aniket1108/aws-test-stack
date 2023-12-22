@@ -11,12 +11,6 @@ phases:
       - rm -rf package-lock.json
       - cd ../../../../../../
 
-      - cd src/layers/node14layer/nodejs/node_modules/node14layer/
-      - npm install
-      - npm prune --production
-      - rm -rf package-lock.json
-      - cd ../../../../../../
-
   build:
     commands:
       - sam build -p -c
