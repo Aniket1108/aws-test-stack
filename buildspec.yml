@@ -7,13 +7,13 @@ phases:
       - npm install
       - npm prune --production
       - rm -rf package-lock.json
-      - cd ../../../../../
+      - cd ../../../../../../
 
-      - cd src/layers/node14layer/nodejs/node_modules/common_layer/
+      - cd src/layers/node14layer/nodejs/node_modules/node14layer/
       - npm install
       - npm prune --production
       - rm -rf package-lock.json
-      - cd ../../../../../
+      - cd ../../../../../../
 
   build:
     commands:
